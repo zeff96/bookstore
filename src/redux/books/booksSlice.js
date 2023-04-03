@@ -1,11 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   books: [],
 };
 
 const booksSlice = createSlice({
-  name: 'books',
+  name: "books",
   initialState,
   reducers: {
     addBook: (state, action) => {
@@ -19,4 +19,5 @@ const booksSlice = createSlice({
   },
 });
 
+export const { addBook, removeBook } = booksSlice.actions;
 export default booksSlice.reducer;
