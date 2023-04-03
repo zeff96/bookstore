@@ -1,98 +1,33 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react';
 import './CreateBooks.scss';
-import { useBooks, useDispatch } from './AddBooklist';
+import CreateBook from './CreateBook';
 
-const AddBookList = () => {
-  const books = useBooks();
-  return (
-    <ul className="book-list">
-      {books.map((book) => (
-        <li key={book.id} className="book-item">
-          <CreateBook book={book} />
-        </li>
-      ))}
-    </ul>
-  );
-};
+const books = [
+  {
+    id: 1,
+    title: 'The Hunger Games',
+    author: 'Suzanne Collins',
+  },
+  {
+    id: 2,
+    title: 'Dune',
+    author: 'Frank Herbert',
+  },
+  {
+    id: 3,
+    title: 'Capital in the Twenty-First Century',
+    author: 'Suzanne Collins',
+  },
+];
 
-const CreateBook = ({ book }) => {
-  const [isEditing, setIsEditing] = useState(false);
-  const dispatch = useDispatch();
-  let BookContent;
-
-  if (isEditing) {
-    BookContent = (
-      <div>
-        <label htmlFor="title">
-          Title:
-          {' '}
-          <input
-            type="text"
-            value={book.title}
-            placeholder="Book title"
-            onChange={(e) => {
-              dispatch({
-                type: 'book_changed',
-                book: {
-                  ...book,
-                  title: e.target.value,
-                },
-              });
-            }}
-          />
-        </label>
-        <label htmlFor="author">
-          Author:
-          {' '}
-          <input
-            type="text"
-            value={book.author}
-            placeholder="Book author"
-            onChange={(e) => {
-              dispatch({
-                type: 'book_changed',
-                book: {
-                  ...book,
-                  author: e.target.value,
-                },
-              });
-            }}
-          />
-        </label>
-      </div>
-    );
-  } else {
-    BookContent = (
-      <div className="books">
-        <p>{book.title}</p>
-        <p>{book.author}</p>
-      </div>
-    );
-  }
-
-  return (
-    <div>
-      {BookContent}
-      <div className="buttons">
-        <button type="button">comments</button>
-        <button
-          type="button"
-          onClick={() => {
-            dispatch({
-              type: 'book_removed',
-              id: book.id,
-            });
-          }}
-        >
-          remove
-        </button>
-        <button type="button" onClick={() => setIsEditing(!isEditing)}>
-          {isEditing ? 'save' : 'edit'}
-        </button>
-      </div>
-    </div>
-  );
-};
+const AddBookList = () => (
+  <ul className="book-list">
+    {books.map((book) => (
+      <li key={book.id} className="book-item">
+        <CreateBook book={book} title={book.title} author={book.author} />
+      </li>
+    ))}
+  </ul>
+);
 
 export default AddBookList;

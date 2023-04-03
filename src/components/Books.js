@@ -1,12 +1,11 @@
-import BookList from './AddBooklist';
 import AddBookList from './CreateBooks';
 import AddBooks from './AddBooks';
 
 const RenderBooks = () => (
-  <BookList>
+  <section>
     <AddBookList />
     <AddBooks />
-  </BookList>
+  </section>
 );
 
 export default RenderBooks;
