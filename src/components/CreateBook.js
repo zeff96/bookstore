@@ -1,4 +1,7 @@
-const CreateBook = ({ book }) => {
+/* eslint-disable react/prop-types */
+import { useState } from 'react';
+
+const CreateBook = ({ title, author }) => {
   const [isEditing, setIsEditing] = useState(false);
   let BookContent;
 
@@ -6,22 +9,18 @@ const CreateBook = ({ book }) => {
     BookContent = (
       <div>
         <label htmlFor="title">
-          Title:
-          {' '}
-          <input type="text" value={book.title} placeholder="Book title" />
+          <input type="text" value={title} placeholder="Book title" />
         </label>
         <label htmlFor="author">
-          Author:
-          {' '}
-          <input type="text" value={book.author} placeholder="Book author" />
+          <input type="text" value={author} placeholder="Book author" />
         </label>
       </div>
     );
   } else {
     BookContent = (
       <div className="books">
-        <p>{book.title}</p>
-        <p>{book.author}</p>
+        <p>{title}</p>
+        <p>{author}</p>
       </div>
     );
   }
