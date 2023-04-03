@@ -1,6 +1,5 @@
 const CreateBook = ({ book }) => {
   const [isEditing, setIsEditing] = useState(false);
-  const dispatch = useDispatch();
   let BookContent;
 
   if (isEditing) {
@@ -8,37 +7,11 @@ const CreateBook = ({ book }) => {
       <div>
         <label htmlFor="title">
           Title:{" "}
-          <input
-            type="text"
-            value={book.title}
-            placeholder="Book title"
-            onChange={(e) => {
-              dispatch({
-                type: "book_changed",
-                book: {
-                  ...book,
-                  title: e.target.value,
-                },
-              });
-            }}
-          />
+          <input type="text" value={book.title} placeholder="Book title" />
         </label>
         <label htmlFor="author">
           Author:{" "}
-          <input
-            type="text"
-            value={book.author}
-            placeholder="Book author"
-            onChange={(e) => {
-              dispatch({
-                type: "book_changed",
-                book: {
-                  ...book,
-                  author: e.target.value,
-                },
-              });
-            }}
-          />
+          <input type="text" value={book.author} placeholder="Book author" />
         </label>
       </div>
     );
@@ -56,17 +29,7 @@ const CreateBook = ({ book }) => {
       {BookContent}
       <div className="buttons">
         <button type="button">comments</button>
-        <button
-          type="button"
-          onClick={() => {
-            dispatch({
-              type: "book_removed",
-              id: book.id,
-            });
-          }}
-        >
-          remove
-        </button>
+        <button type="button">remove</button>
         <button type="button" onClick={() => setIsEditing(!isEditing)}>
           {isEditing ? "save" : "edit"}
         </button>
@@ -74,3 +37,5 @@ const CreateBook = ({ book }) => {
     </div>
   );
 };
+
+export default CreateBook;
