@@ -6,11 +6,13 @@ const CreateBook = ({ book }) => {
     BookContent = (
       <div>
         <label htmlFor="title">
-          Title:{" "}
+          Title:
+          {' '}
           <input type="text" value={book.title} placeholder="Book title" />
         </label>
         <label htmlFor="author">
-          Author:{" "}
+          Author:
+          {' '}
           <input type="text" value={book.author} placeholder="Book author" />
         </label>
       </div>
@@ -31,7 +33,7 @@ const CreateBook = ({ book }) => {
         <button type="button">comments</button>
         <button type="button">remove</button>
         <button type="button" onClick={() => setIsEditing(!isEditing)}>
-          {isEditing ? "save" : "edit"}
+          {isEditing ? 'save' : 'edit'}
         </button>
       </div>
     </div>

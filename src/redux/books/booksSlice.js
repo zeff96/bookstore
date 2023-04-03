@@ -1,12 +1,12 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { useState } from "react";
+import { createSlice } from '@reduxjs/toolkit';
+import { useState } from 'react';
 
 const initialState = {
   books: [],
 };
 
 const booksSlice = createSlice({
-  name: "books",
+  name: 'books',
   initialState,
   reducers: {
     addBook: (state, action) => {
