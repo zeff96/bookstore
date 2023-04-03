@@ -9,3 +9,5 @@ const CategoriesSlice = createSlice({
   initialState,
   reducers: {},
 });
+
+export default CategoriesSlice.reducer;
