@@ -1,16 +1,16 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   categories: [],
 };
 
 const CategoriesSlice = createSlice({
-  name: "categories",
+  name: 'categories',
   initialState,
   reducers: {
     checkStatus: (state) => {
       if (state.categories.length === 0) {
-        state.categories.push("Under construction");
+        state.categories.push('Under construction');
       }
     },
   },
