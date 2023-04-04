@@ -35,7 +35,9 @@ const AddBooks = () => {
           }}
         />
       </label>
-      <button type="button">ADD BOOK</button>
+      <button type="button" onClick={handleAddClick}>
+        ADD BOOK
+      </button>
     </div>
   );
 };
