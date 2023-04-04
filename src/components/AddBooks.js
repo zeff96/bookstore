@@ -7,6 +7,12 @@ const AddBooks = () => {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
 
+  const dispatch = useDispatch();
+
+  const handleAddClick = () => {
+    dispatch(addBook(title, author));
+  };
+
   return (
     <div className="add-books">
       <label htmlFor="title">
