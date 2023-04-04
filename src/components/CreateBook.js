@@ -6,6 +6,8 @@ const CreateBook = ({ title, author }) => {
   const [isEditing, setIsEditing] = useState(false);
   let BookContent;
 
+  const dispatch = useDispatch();
+
   if (isEditing) {
     BookContent = (
       <div>
