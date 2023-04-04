@@ -33,7 +33,11 @@ const booksSlice = createSlice({
       },
       prepare: (title, author) => {
         return {
-          payload: {},
+          payload: {
+            id: nanoid(),
+            title,
+            author,
+          },
         };
       },
     },
