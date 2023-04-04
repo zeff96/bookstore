@@ -1,20 +1,21 @@
-import './AddBooks.scss';
-import { useDispatch } from 'react-redux';
-import { useState } from 'react';
-import { addBook } from '../redux/books/booksSlice';
+import "./AddBooks.scss";
+import { useDispatch } from "react-redux";
+import { useState } from "react";
+import { addBook } from "../redux/books/booksSlice";
 
 const AddBooks = () => {
-  const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
 
   const dispatch = useDispatch();
 
   const resetForm = () => {
-    setTitle('');
-    setAuthor('');
+    setTitle("");
+    setAuthor("");
   };
 
   const handleAddClick = () => {
+    if (title === "" && author === "") return;
     dispatch(addBook(title, author));
     resetForm();
   };
