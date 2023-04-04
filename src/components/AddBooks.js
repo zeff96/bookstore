@@ -1,11 +1,11 @@
-import "./AddBooks.scss";
-import { useDispatch } from "react-redux";
-import { addBook } from "../redux/books/booksSlice";
-import { useState } from "react";
+import './AddBooks.scss';
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
+import { addBook } from '../redux/books/booksSlice';
 
 const AddBooks = () => {
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
 
   const dispatch = useDispatch();
 
