@@ -14,8 +14,9 @@ const AddBooks = () => {
     setAuthor('');
   };
 
+  const canAdd = Boolean(title) && Boolean(author);
+
   const handleAddClick = () => {
-    if (title === '' && author === '') return;
     dispatch(addBook(title, author));
     resetForm();
   };
@@ -42,7 +43,7 @@ const AddBooks = () => {
           }}
         />
       </label>
-      <button type="button" onClick={handleAddClick}>
+      <button type="button" onClick={handleAddClick} disabled={!canAdd}>
         ADD BOOK
       </button>
     </div>
