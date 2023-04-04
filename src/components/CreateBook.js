@@ -38,7 +38,9 @@ const CreateBook = ({ title, author, id }) => {
       {BookContent}
       <div className="buttons">
         <button type="button">comments</button>
-        <button type="button">remove</button>
+        <button type="button" onClick={handleRemoveClick}>
+          remove
+        </button>
         <button type="button" onClick={() => setIsEditing(!isEditing)}>
           {isEditing ? "save" : "edit"}
         </button>
