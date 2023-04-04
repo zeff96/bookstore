@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { removeBook } from "../redux/books/booksSlice";
 
-const CreateBook = ({ title, author }) => {
+const CreateBook = ({ title, author, id }) => {
   const [isEditing, setIsEditing] = useState(false);
   let BookContent;
 
