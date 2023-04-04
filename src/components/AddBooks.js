@@ -1,4 +1,6 @@
-import './AddBooks.scss';
+import "./AddBooks.scss";
+import { useDispatch } from "react-redux";
+import { addBook } from "../redux/books/booksSlice";
 
 const AddBooks = () => (
   <div className="add-books">
