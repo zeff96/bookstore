@@ -41,8 +41,11 @@ const booksSlice = createSlice({
     },
 
     removeBook: (state, action) => {
-      const index = state.books.find((b) => b.id === action.payload.id);
-      state.books.splice(index, 1);
+      const id = action.payload;
+      return {
+        ...state,
+        books: state.books.filter((b) => b.id !== id),
+      };
     },
   },
 });

@@ -10,7 +10,7 @@ const CreateBook = ({ title, author, id }) => {
   const dispatch = useDispatch();
 
   const handleRemoveClick = () => {
-    dispatch(removeBook({ id }));
+    dispatch(removeBook(id));
   };
 
   if (isEditing) {

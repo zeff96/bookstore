@@ -14,7 +14,7 @@ const AddBookList = () => {
             book={book}
             title={book.title}
             author={book.author}
-            item_id={book.id}
+            id={book.id}
           />
         </li>
       ))}
