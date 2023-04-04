@@ -1,9 +1,17 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/booksSlice';
 
-const CreateBook = ({ title, author }) => {
+const CreateBook = ({ title, author, id }) => {
   const [isEditing, setIsEditing] = useState(false);
   let BookContent;
+
+  const dispatch = useDispatch();
+
+  const handleRemoveClick = () => {
+    dispatch(removeBook(id));
+  };
 
   if (isEditing) {
     BookContent = (
@@ -30,7 +38,9 @@ const CreateBook = ({ title, author }) => {
       {BookContent}
       <div className="buttons">
         <button type="button">comments</button>
-        <button type="button">remove</button>
+        <button type="button" onClick={handleRemoveClick}>
+          remove
+        </button>
         <button type="button" onClick={() => setIsEditing(!isEditing)}>
           {isEditing ? 'save' : 'edit'}
         </button>
