@@ -20,7 +20,14 @@ const AddBooks = () => {
         />
       </label>
       <label htmlFor="author">
-        <input type="text" placeholder="Book author" />
+        <input
+          type="text"
+          placeholder="Book author"
+          value={author}
+          onChange={(e) => {
+            setAuthor(e.target.value);
+          }}
+        />
       </label>
       <button type="button">ADD BOOK</button>
     </div>
