@@ -3,19 +3,19 @@ import { createSlice, nanoid } from '@reduxjs/toolkit';
 const initialState = {
   books: [
     {
-      id: 'item1',
+      item_id: 'item1',
       title: 'The Great Gatsby',
       author: 'John Smith',
       category: 'Fiction',
     },
     {
-      id: 'item2',
+      item_id: 'item2',
       title: 'Anna Karenina',
       author: 'Leo Tolstoy',
       category: 'Fiction',
     },
     {
-      id: 'item3',
+      item_id: 'item3',
       title: 'The Selfish Gene',
       author: 'Richard Dawkins',
       category: 'Nonfiction',
@@ -33,7 +33,7 @@ const booksSlice = createSlice({
       },
       prepare: (title, author) => ({
         payload: {
-          id: nanoid(),
+          item_id: nanoid(),
           title,
           author,
         },
@@ -42,7 +42,7 @@ const booksSlice = createSlice({
 
     removeBook: (state, action) => {
       const index = state.books.findIndex(
-        (book) => book.id === action.payload.id,
+        (book) => book.item_id === action.payload.id,
       );
       state.books.splice(index, 1);
     },
