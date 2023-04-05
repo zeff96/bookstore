@@ -18,14 +18,13 @@ const AddBooks = () => {
   const canAdd = Boolean(title) && Boolean(author);
 
   const handleAddClick = () => {
-    dispatch(
-      postBooksAsync({
-        item_id: nanoid(),
-        title,
-        author,
-        category: 'action',
-      }),
-    );
+    const book = {
+      item_id: nanoid(),
+      title,
+      author,
+      category: 'action',
+    };
+    dispatch(postBooksAsync(book));
     resetForm();
   };
 
