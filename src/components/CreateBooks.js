@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import './CreateBooks.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
