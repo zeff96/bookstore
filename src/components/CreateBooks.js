@@ -7,6 +7,8 @@ import { useEffect } from "react";
 
 const AddBookList = () => {
   const books = useSelector(selectedBooks);
+  const dispatch = useDispatch();
+
   return (
     <ul className="book-list">
       {books.map((book) => (
