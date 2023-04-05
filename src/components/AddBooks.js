@@ -1,7 +1,8 @@
 import './AddBooks.scss';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { addBook } from '../redux/books/booksSlice';
+import { nanoid } from '@reduxjs/toolkit';
+import { postBooksAsync } from '../redux/books/booksSlice';
 
 const AddBooks = () => {
   const [title, setTitle] = useState('');
@@ -17,7 +18,13 @@ const AddBooks = () => {
   const canAdd = Boolean(title) && Boolean(author);
 
   const handleAddClick = () => {
-    dispatch(addBook(title, author));
+    const book = {
+      item_id: nanoid(),
+      title,
+      author,
+      category: 'action',
+    };
+    dispatch(postBooksAsync(book));
     resetForm();
   };
 
