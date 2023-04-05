@@ -27,12 +27,15 @@ const initialState = {
 const url =
   "https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/j4minPcq1Tx6T5PG7ORZ";
 
-const getBooksAsync = createAsyncThunk("books/getBooksAsync", async () => {
-  const response = await axios.get(`${url}/books`);
-  return response.data;
-});
+export const getBooksAsync = createAsyncThunk(
+  "books/getBooksAsync",
+  async () => {
+    const response = await axios.get(`${url}/books`);
+    return response.data;
+  }
+);
 
-const postBooksAsync = createAsyncThunk(
+export const postBooksAsync = createAsyncThunk(
   "books/postBooksAsync",
   async (book) => {
     const response = await axios.post(`${url}/books`, book);
@@ -40,7 +43,7 @@ const postBooksAsync = createAsyncThunk(
   }
 );
 
-const deleteBooksAsync = createAsyncThunk(
+export const deleteBooksAsync = createAsyncThunk(
   "books/deleteBooksAsync",
   async (id) => {
     const response = await axios.delete(`${url}/books/${id}`);
