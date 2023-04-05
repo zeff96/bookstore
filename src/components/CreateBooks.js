@@ -7,11 +7,18 @@ import { selectedBooks, getBooksAsync } from '../redux/books/booksSlice';
 
 const AddBookList = () => {
   const books = useSelector(selectedBooks);
+  const { status } = useSelector((state) => state.books);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getBooksAsync());
-  }, [dispatch]);
+    if (status === 'idle') {
+      dispatch(getBooksAsync());
+    }
+  }, [status, dispatch]);
+
+  if (status === 'loading') {
+    return <h3>Loading...</h3>;
+  }
 
   return (
     <ul className="book-list">
