@@ -70,7 +70,11 @@ const booksSlice = createSlice({
         ...state,
         status: 'loading',
       }))
-      .addCase(getBooksAsync.fulfilled, (state, action) => action.payload);
+      .addCase(getBooksAsync.fulfilled, (state, action) => action.payload)
+      .addCase(getBooksAsync.rejected, (state) => ({
+        ...state,
+        status: 'rejected',
+      }));
   },
 });
 
