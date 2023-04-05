@@ -24,6 +24,14 @@ const initialState = {
   ],
 };
 
+const base_url =
+  "https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/j4minPcq1Tx6T5PG7ORZ";
+
+const getBooks = createAsyncThunk("books/getBooksAsync", async () => {
+  const response = await axios.get(`${base_url}/books`);
+  return response.data;
+});
+
 const booksSlice = createSlice({
   name: "books",
   initialState,
