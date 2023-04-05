@@ -9,6 +9,10 @@ const AddBookList = () => {
   const books = useSelector(selectedBooks);
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(getBooksAsync());
+  }, [dispatch]);
+
   return (
     <ul className="book-list">
       {books.map((book) => (
