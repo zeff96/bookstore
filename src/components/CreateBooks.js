@@ -24,12 +24,7 @@ const AddBookList = () => {
     <ul className="book-list">
       {books.map((book) => (
         <li key={book.item_id} className="book-item">
-          <CreateBook
-            book={book}
-            title={book.title}
-            author={book.author}
-            id={book.id}
-          />
+          <CreateBook book={book} />
         </li>
       ))}
     </ul>
