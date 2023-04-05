@@ -32,10 +32,21 @@ const getBooksAsync = createAsyncThunk("books/getBooksAsync", async () => {
   return response.data;
 });
 
-const postBooks = createAsyncThunk("books/postBooksAsync", async (book) => {
-  const response = await axios.post(`${base_url}/books`, book);
-  return response.data;
-});
+const postBooksAsync = createAsyncThunk(
+  "books/postBooksAsync",
+  async (book) => {
+    const response = await axios.post(`${base_url}/books`, book);
+    return response.data;
+  }
+);
+
+const deleteBooksAsync = createAsyncThunk(
+  "books/deleteBooksAsync",
+  async (id) => {
+    const response = await axios.delete(`${base_url}/books/${id}`);
+    return response.data;
+  }
+);
 
 const booksSlice = createSlice({
   name: "books",
