@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { deleteBooksAsync } from "../redux/books/booksSlice";
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { deleteBooksAsync } from '../redux/books/booksSlice';
 
 const CreateBook = ({ title, author, id }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -42,7 +42,7 @@ const CreateBook = ({ title, author, id }) => {
           remove
         </button>
         <button type="button" onClick={() => setIsEditing(!isEditing)}>
-          {isEditing ? "save" : "edit"}
+          {isEditing ? 'save' : 'edit'}
         </button>
       </div>
     </div>

@@ -1,58 +1,44 @@
-import { createAsyncThunk, createSlice, nanoid } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createAsyncThunk, createSlice, nanoid } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 const initialState = {
-  books: [
-    {
-      item_id: "item1",
-      title: "The Great Gatsby",
-      author: "John Smith",
-      category: "Fiction",
-    },
-    {
-      item_id: "item2",
-      title: "Anna Karenina",
-      author: "Leo Tolstoy",
-      category: "Fiction",
-    },
-    {
-      item_id: "item3",
-      title: "The Selfish Gene",
-      author: "Richard Dawkins",
-      category: "Nonfiction",
-    },
-  ],
+  books: [],
 };
 
-const url =
-  "https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/j4minPcq1Tx6T5PG7ORZ";
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/j4minPcq1Tx6T5PG7ORZ';
 
 export const getBooksAsync = createAsyncThunk(
-  "books/getBooksAsync",
+  'books/getBooksAsync',
   async () => {
     const response = await axios.get(`${url}/books`);
-    return response.data;
-  }
+    const { data } = response;
+    const books = Object.keys(data).map((key) => ({
+      ...data[key][0],
+      item_id: key,
+    }));
+    return { books };
+  },
 );
 
 export const postBooksAsync = createAsyncThunk(
-  "books/postBooksAsync",
+  'books/postBooksAsync',
   async (book) => {
     const response = await axios.post(`${url}/books`, book);
     return response.data;
-  }
+  },
 );
 
 export const deleteBooksAsync = createAsyncThunk(
-  "books/deleteBooksAsync",
+  'books/deleteBooksAsync',
   async (id) => {
     const response = await axios.delete(`${url}/books/${id}`);
-    return response.data;
-  }
+    const books = response.data;
+    return { books };
+  },
 );
 
 const booksSlice = createSlice({
-  name: "books",
+  name: 'books',
   initialState,
   reducers: {
     addBook: {
@@ -70,10 +56,14 @@ const booksSlice = createSlice({
 
     removeBook: (state, action) => {
       const index = state.books.findIndex(
-        (book) => book.item_id === action.payload.id
+        (book) => book.item_id === action.payload.id,
       );
       state.books.splice(index, 1);
     },
+  },
+
+  extraReducers: (builder) => {
+    builder.addCase(getBooksAsync.fulfilled, (state, action) => action.payload);
   },
 });
 
