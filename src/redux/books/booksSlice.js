@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, nanoid } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const initialState = {
@@ -42,24 +42,16 @@ const booksSlice = createSlice({
   name: 'books',
   initialState,
   reducers: {
-    addBook: {
-      reducer: (state, action) => {
-        state.books.push(action.payload);
-      },
-      prepare: (title, author) => ({
-        payload: {
-          item_id: nanoid(),
-          title,
-          author,
-        },
-      }),
+    addBook: (state, action) => {
+      state.books.push(action.payload);
     },
 
     removeBook: (state, action) => {
-      const index = state.books.findIndex(
-        (book) => book.item_id === action.payload.id,
-      );
-      state.books.splice(index, 1);
+      const bookId = action.payload;
+      return {
+        ...state,
+        books: state.books.filter((b) => b.item_id !== bookId),
+      };
     },
   },
 
@@ -74,12 +66,15 @@ const booksSlice = createSlice({
         ...state,
         status: 'rejected',
       }))
-      .addCase(postBooksAsync.fulfilled, (state, action) => state.books.concat(action.payload))
+      .addCase(postBooksAsync.fulfilled, (state, action) => ({
+        ...state,
+        books: state.books.concat(action.payload),
+      }))
       .addCase(deleteBooksAsync.fulfilled, (state, action) => {
         const bookId = action.payload;
         return {
           ...state,
-          books: state.books.filter((book) => book.item_id !== bookId),
+          books: state.books.filter((b) => b.item_id !== bookId),
         };
       });
   },
