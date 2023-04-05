@@ -3,32 +3,28 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteBooksAsync } from '../redux/books/booksSlice';
 
-const CreateBook = ({ title, author, id }) => {
+const CreateBook = ({ book }) => {
   const [isEditing, setIsEditing] = useState(false);
   let BookContent;
 
   const dispatch = useDispatch();
 
-  const handleRemoveClick = () => {
-    dispatch(deleteBooksAsync(id));
-  };
-
   if (isEditing) {
     BookContent = (
       <div>
         <label htmlFor="title">
-          <input type="text" value={title} placeholder="Book title" />
+          <input type="text" value={book.title} placeholder="Book title" />
         </label>
         <label htmlFor="author">
-          <input type="text" value={author} placeholder="Book author" />
+          <input type="text" value={book.author} placeholder="Book author" />
         </label>
       </div>
     );
   } else {
     BookContent = (
       <div className="books">
-        <p>{title}</p>
-        <p>{author}</p>
+        <p>{book.title}</p>
+        <p>{book.author}</p>
       </div>
     );
   }
@@ -38,7 +34,10 @@ const CreateBook = ({ title, author, id }) => {
       {BookContent}
       <div className="buttons">
         <button type="button">comments</button>
-        <button type="button" onClick={handleRemoveClick}>
+        <button
+          type="button"
+          onClick={() => dispatch(deleteBooksAsync(book.item_id))}
+        >
           remove
         </button>
         <button type="button" onClick={() => setIsEditing(!isEditing)}>
