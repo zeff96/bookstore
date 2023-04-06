@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
-import './CreateBook.scss';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { deleteBooksAsync } from '../redux/books/booksSlice';
+import PropTypes from "prop-types";
+import "./CreateBook.scss";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { deleteBooksAsync } from "../redux/books/booksSlice";
 
 const CreateBook = ({ book }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -32,25 +32,30 @@ const CreateBook = ({ book }) => {
 
   return (
     <div>
-      {BookContent}
-      <div className="buttons">
-        <button className="comment-btn" type="button">
-          comments
-        </button>
-        <button
-          className="delete-btn"
-          type="button"
-          onClick={() => dispatch(deleteBooksAsync(book.item_id))}
-        >
-          remove
-        </button>
-        <button
-          type="button"
-          onClick={() => setIsEditing(!isEditing)}
-          className="edit-btn"
-        >
-          {isEditing ? 'save' : 'edit'}
-        </button>
+      <div>
+        {BookContent}
+        <div className="buttons">
+          <button className="comment-btn" type="button">
+            comments
+          </button>
+          <button
+            className="delete-btn"
+            type="button"
+            onClick={() => dispatch(deleteBooksAsync(book.item_id))}
+          >
+            remove
+          </button>
+          <button
+            type="button"
+            onClick={() => setIsEditing(!isEditing)}
+            className="edit-btn"
+          >
+            {isEditing ? "save" : "edit"}
+          </button>
+        </div>
+        <div>
+          <h2 className="current-chapter">CURRENT CHAPTER</h2>
+        </div>
       </div>
     </div>
   );
