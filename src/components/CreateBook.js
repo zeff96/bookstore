@@ -1,8 +1,8 @@
-import PropTypes from "prop-types";
-import "./CreateBook.scss";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { deleteBooksAsync } from "../redux/books/booksSlice";
+import PropTypes from 'prop-types';
+import './CreateBook.scss';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { deleteBooksAsync } from '../redux/books/booksSlice';
 
 const CreateBook = ({ book }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -31,7 +31,7 @@ const CreateBook = ({ book }) => {
   }
 
   return (
-    <div>
+    <div style={{ display: 'flex' }}>
       <div>
         {BookContent}
         <div className="buttons">
@@ -50,12 +50,13 @@ const CreateBook = ({ book }) => {
             onClick={() => setIsEditing(!isEditing)}
             className="edit-btn"
           >
-            {isEditing ? "save" : "edit"}
+            {isEditing ? 'save' : 'edit'}
           </button>
         </div>
-        <div>
-          <h2 className="current-chapter">CURRENT CHAPTER</h2>
-        </div>
+      </div>
+      <div>
+        <h2 className="current-chapter">CURRENT CHAPTER</h2>
+        <h3 className="chapter">Chapter 17</h3>
       </div>
     </div>
   );
