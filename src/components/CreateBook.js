@@ -34,7 +34,7 @@ const CreateBook = ({ book }) => {
     );
   } else {
     BookContent = (
-      <div className="books">
+      <div className="book">
         <p className="title">{book.title}</p>
         <p className="author">{book.author}</p>
       </div>

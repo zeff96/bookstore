@@ -1,8 +1,12 @@
+.book {
+  width: 100%;
+}
+
 .title {
-  width: 12.313rem;
+  width: 100%;
   height: 1.813rem;
-  margin: 0.188rem 20.188rem 0 0;
-  font-family: RobotoSlab;
+  margin-top: 0.188rem;
+  font-family: RobotoSlab, sans-serif;
   font-size: 1.375rem;
   font-weight: bold;
   font-stretch: normal;
@@ -13,10 +17,9 @@
 }
 
 .author {
-  width: 5.813rem;
-  height: 1.188rem;
+  width: 100%;
   margin: 0.25rem 0.875rem 0 0;
-  font-family: RobotoSlab;
+  font-family: RobotoSlab, sans-serif;
   font-size: 0.875rem;
   font-weight: 300;
   font-stretch: normal;
@@ -29,11 +32,11 @@
 .buttons {
   display: flex;
   align-items: center;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .buttons button {
-  font-family: RobotoSlab;
+  font-family: RobotoSlab, sans-serif;
   font-size: 0.875rem;
   font-weight: 300;
   font-stretch: normal;
@@ -110,7 +113,7 @@
   width: 4.25rem;
   height: 2.438rem;
   margin: 0.063rem 5.75rem 0 0.688rem;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-size: 2rem;
   font-weight: normal;
   font-stretch: normal;
@@ -126,7 +129,7 @@
   height: 1.125rem;
   margin: 0.438rem 4.938rem 0.75rem 0.75rem;
   opacity: 0.5;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-size: 0.875rem;
   font-weight: normal;
   font-stretch: normal;
@@ -141,7 +144,7 @@
   height: 1.125rem;
   margin: 0.063rem 3.625rem 0 3.688rem;
   opacity: 0.5;
-  font-family: RobotoSlab;
+  font-family: RobotoSlab, sans-serif;
   font-size: 0.813rem;
   font-weight: 300;
   font-stretch: normal;
@@ -155,7 +158,7 @@
   width: 4.688rem;
   height: 1.313rem;
   margin: 0.438rem 6.813rem 0.25rem 3.688rem;
-  font-family: RobotoSlab;
+  font-family: RobotoSlab, sans-serif;
   font-size: 1rem;
   font-weight: 300;
   font-stretch: normal;
@@ -172,7 +175,7 @@
   padding: 0.438rem 1.188rem 0.5rem 1.375rem;
   border: none;
   border-radius: 3px;
-  font-family: RobotoSlab;
+  font-family: RobotoSlab, sans-serif;
   font-size: 0.813rem;
   font-weight: 300;
   font-stretch: normal;
