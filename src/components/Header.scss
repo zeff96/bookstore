@@ -4,6 +4,7 @@
   margin: 0 0 2.375rem;
   padding: 1.438rem 6.188rem 1.688rem 6.25rem;
   background-color: var(--white-two);
+  display: flex;
 }
 
 .header-title {
@@ -32,6 +33,7 @@
   line-height: normal;
   letter-spacing: 1.9px;
   color: #121212;
+  text-decoration: none;
 }
 
 .categories {
@@ -47,4 +49,5 @@
   line-height: normal;
   letter-spacing: 1.9px;
   color: #121212;
+  text-decoration: none;
 }
