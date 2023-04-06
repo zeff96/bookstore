@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import './Header.scss';
+import { BiUserCircle } from 'react-icons/bi';
 
 const Header = () => (
   <div className="header">
@@ -10,6 +11,9 @@ const Header = () => (
     <NavLink className="categories" to="/categories">
       CATEGORIES
     </NavLink>
+    <span className="user-icon">
+      <BiUserCircle />
+    </span>
   </div>
 );
 
