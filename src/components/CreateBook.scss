@@ -26,6 +26,10 @@
   color: var(--cool-blue);
 }
 
+.buttons {
+  margin-top: 3rem;
+}
+
 .buttons button {
   font-family: RobotoSlab;
   font-size: 0.875rem;
@@ -37,6 +41,7 @@
   color: var(--cool-blue);
   border: none;
   background-color: var(--white-two);
+  cursor: pointer;
 }
 
 .comment-btn {
