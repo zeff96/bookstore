@@ -7,7 +7,13 @@
 }
 
 .book-item {
-  margin-bottom: 2rem;
+  width: 75rem;
+  height: 10.625rem;
+  margin: 2.313rem 6.25rem 0;
+  padding: 2rem 9.188rem 1.625rem 1.688rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: var(--white-two);
 }
 
 .books p {
