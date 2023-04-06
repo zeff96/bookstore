@@ -70,7 +70,10 @@ const CreateBook = ({ book }) => {
           <CircularProgressbar value={percent} className="progress-bar" />
         </div>
         <div>
-          <span className="show-progress">{percent}</span>
+          <span className="show-progress">
+            {percent}
+            %
+          </span>
           <span className="completed">Completed</span>
         </div>
       </div>
