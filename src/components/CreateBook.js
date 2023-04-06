@@ -1,17 +1,24 @@
-import PropTypes from 'prop-types';
-import './CreateBook.scss';
-import { CircularProgressbar } from 'react-circular-progressbar';
-import 'react-circular-progressbar/dist/styles.css';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { deleteBooksAsync } from '../redux/books/booksSlice';
+import PropTypes from "prop-types";
+import "./CreateBook.scss";
+import { CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { deleteBooksAsync } from "../redux/books/booksSlice";
 
 const CreateBook = ({ book }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [percent, setPercent] = useState(64);
+
   let BookContent;
 
   const dispatch = useDispatch();
+
+  const handleUpdate = () => {
+    if (percent < 100) {
+      setPercent((percent += 2));
+    }
+  };
 
   if (isEditing) {
     BookContent = (
@@ -34,8 +41,8 @@ const CreateBook = ({ book }) => {
   }
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center' }}>
-      <div style={{ width: '50.5rem' }}>
+    <div style={{ display: "flex", alignItems: "center" }}>
+      <div style={{ width: "50.5rem" }}>
         {BookContent}
         <div className="buttons">
           <button className="comment-btn" type="button">
@@ -53,13 +60,17 @@ const CreateBook = ({ book }) => {
             onClick={() => setIsEditing(!isEditing)}
             className="edit-btn"
           >
-            {isEditing ? 'save' : 'edit'}
+            {isEditing ? "save" : "edit"}
           </button>
         </div>
       </div>
       <div>
         <div>
           <CircularProgressbar value={percent} className="progress-bar" />
+        </div>
+        <div>
+          <span className="show-progress">{percent}</span>
+          <span className="completed">Completed</span>
         </div>
       </div>
       <div>
