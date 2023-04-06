@@ -82,7 +82,7 @@ const CreateBook = ({ book }) => {
           <span className="completed">Completed</span>
         </div>
       </div>
-      <div>
+      <div className="book-chapter">
         <h2 className="current-chapter">CURRENT CHAPTER</h2>
         <h3 className="chapter">Chapter 17</h3>
         <button

@@ -140,9 +140,7 @@
 }
 
 .current-chapter {
-  width: 7.875rem;
-  height: 1.125rem;
-  margin: 0.063rem 3.625rem 0 3.688rem;
+  margin-top: 0.063rem;
   opacity: 0.5;
   font-family: RobotoSlab, sans-serif;
   font-size: 0.813rem;
@@ -154,10 +152,14 @@
   color: #121212;
 }
 
+.book-chapter {
+  display: flex;
+  flex-direction: column;
+  padding-left: 3.68rem;
+}
+
 .chapter {
-  width: 4.688rem;
-  height: 1.313rem;
-  margin: 0.438rem 6.813rem 0.25rem 3.688rem;
+  margin: 0.438rem 0 0.25rem 0;
   font-family: RobotoSlab, sans-serif;
   font-size: 1rem;
   font-weight: 300;
@@ -171,7 +173,7 @@
 .update-progress {
   width: 11.5rem;
   height: 2.063rem;
-  margin: 0.75rem 1.75rem 0.563rem 3.688rem;
+  margin: 0.75rem 0 0.563rem 0;
   padding: 0.438rem 1.188rem 0.5rem 1.375rem;
   border: none;
   border-radius: 3px;
