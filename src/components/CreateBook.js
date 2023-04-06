@@ -34,14 +34,21 @@ const CreateBook = ({ book }) => {
     <div>
       {BookContent}
       <div className="buttons">
-        <button type="button">comments</button>
+        <button className="comment-btn" type="button">
+          comments
+        </button>
         <button
+          className="delete-btn"
           type="button"
           onClick={() => dispatch(deleteBooksAsync(book.item_id))}
         >
           remove
         </button>
-        <button type="button" onClick={() => setIsEditing(!isEditing)}>
+        <button
+          type="button"
+          onClick={() => setIsEditing(!isEditing)}
+          className="edit-btn"
+        >
           {isEditing ? 'save' : 'edit'}
         </button>
       </div>
