@@ -29,30 +29,33 @@ const AddBooks = () => {
   };
 
   return (
-    <div className="add-books">
-      <label htmlFor="title">
-        <input
-          type="text"
-          placeholder="Book title"
-          value={title}
-          onChange={(e) => {
-            setTitle(e.target.value);
-          }}
-        />
-      </label>
-      <label htmlFor="author">
-        <input
-          type="text"
-          placeholder="Book author"
-          value={author}
-          onChange={(e) => {
-            setAuthor(e.target.value);
-          }}
-        />
-      </label>
-      <button type="button" onClick={handleAddClick} disabled={!canAdd}>
-        ADD BOOK
-      </button>
+    <div className="wrapper">
+      <h1>ADD NEW BOOK</h1>
+      <div className="add-books">
+        <label htmlFor="title">
+          <input
+            type="text"
+            placeholder="Book title"
+            value={title}
+            onChange={(e) => {
+              setTitle(e.target.value);
+            }}
+          />
+        </label>
+        <label htmlFor="author">
+          <input
+            type="text"
+            placeholder="Book author"
+            value={author}
+            onChange={(e) => {
+              setAuthor(e.target.value);
+            }}
+          />
+        </label>
+        <button type="button" onClick={handleAddClick} disabled={!canAdd}>
+          ADD BOOK
+        </button>
+      </div>
     </div>
   );
 };
