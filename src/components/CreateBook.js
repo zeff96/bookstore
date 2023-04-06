@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import './CreateBook.scss';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteBooksAsync } from '../redux/books/booksSlice';
@@ -23,8 +24,8 @@ const CreateBook = ({ book }) => {
   } else {
     BookContent = (
       <div className="books">
-        <p>{book.title}</p>
-        <p>{book.author}</p>
+        <p className="title">{book.title}</p>
+        <p className="author">{book.author}</p>
       </div>
     );
   }
