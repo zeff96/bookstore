@@ -42,8 +42,13 @@ const CreateBook = ({ book }) => {
   }
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center' }}>
-      <div style={{ width: '50.5rem' }}>
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      <div style={{ width: '50.5rem', borderRight: 'solid 1px #e8e8e8' }}>
         {BookContent}
         <div className="buttons">
           <button className="comment-btn" type="button">

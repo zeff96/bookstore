@@ -27,6 +27,8 @@
 }
 
 .buttons {
+  display: flex;
+  align-items: center;
   margin-top: 3rem;
 }
 
@@ -39,6 +41,7 @@
   line-height: normal;
   letter-spacing: normal;
   color: var(--cool-blue);
+  text-align: left;
   border: none;
   background-color: var(--white-two);
   cursor: pointer;
@@ -48,13 +51,35 @@
   width: 4.563rem;
   height: 1.188rem;
   margin: 0.188rem 0.938rem 0.125rem 0;
-  border-right: solid 1px #6c0f0f;
+  position: relative;
+}
+
+.comment-btn::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border: solid 1px #e8e8e8;
+  height: 1.5rem;
 }
 
 .delete-btn {
   width: 3.375rem;
   height: 1.188rem;
   margin: 0.188rem 0.938rem 0.125rem 0.875rem;
+  border-left: solid 1px;
+  position: relative;
+}
+
+.delete-btn::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border: solid 1px #e8e8e8;
+  height: 1.5rem;
 }
 
 .edit-btn {
@@ -65,8 +90,8 @@
 
 .progress {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 60%;
+  transform: translateX(-60%);
   display: flex;
   gap: 1.3rem;
 }
