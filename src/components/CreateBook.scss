@@ -26,10 +26,7 @@
   color: var(--cool-blue);
 }
 
-.comment-btn {
-  width: 4.563rem;
-  height: 1.188rem;
-  margin: 0.188rem 0.938rem 0.125rem 0;
+.buttons button {
   font-family: RobotoSlab;
   font-size: 0.875rem;
   font-weight: 300;
@@ -38,32 +35,25 @@
   line-height: normal;
   letter-spacing: normal;
   color: var(--cool-blue);
+  border: none;
+  background-color: var(--white-two);
+}
+
+.comment-btn {
+  width: 4.563rem;
+  height: 1.188rem;
+  margin: 0.188rem 0.938rem 0.125rem 0;
+  border-right: solid 1px #6c0f0f;
 }
 
 .delete-btn {
   width: 3.375rem;
   height: 1.188rem;
   margin: 0.188rem 0.938rem 0.125rem 0.875rem;
-  font-family: RobotoSlab;
-  font-size: 0.875rem;
-  font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: var(--cool-blue);
 }
 
 .edit-btn {
   width: 1.688rem;
   height: 1.188rem;
   margin: 0.188rem 18.625rem 0.125rem 1.063rem;
-  font-family: RobotoSlab;
-  font-size: 0.875rem;
-  font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: var(--cool-blue);
 }
