@@ -40,6 +40,7 @@ const AddBooks = () => {
             onChange={(e) => {
               setTitle(e.target.value);
             }}
+            className="title-input"
           />
         </label>
         <label htmlFor="author">
@@ -50,6 +51,7 @@ const AddBooks = () => {
             onChange={(e) => {
               setAuthor(e.target.value);
             }}
+            className="author-input"
           />
         </label>
         <button type="button" onClick={handleAddClick} disabled={!canAdd}>
