@@ -76,7 +76,11 @@ const CreateBook = ({ book }) => {
       <div>
         <h2 className="current-chapter">CURRENT CHAPTER</h2>
         <h3 className="chapter">Chapter 17</h3>
-        <button type="button" className="update-progress">
+        <button
+          type="button"
+          className="update-progress"
+          onClick={handleUpdate}
+        >
           UPDATE PROGRESS
         </button>
       </div>
