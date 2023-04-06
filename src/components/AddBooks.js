@@ -54,7 +54,12 @@ const AddBooks = () => {
             className="author-input"
           />
         </label>
-        <button type="button" onClick={handleAddClick} disabled={!canAdd}>
+        <button
+          className="add-btn"
+          type="button"
+          onClick={handleAddClick}
+          disabled={!canAdd}
+        >
           ADD BOOK
         </button>
       </div>

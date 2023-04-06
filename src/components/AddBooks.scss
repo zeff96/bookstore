@@ -20,6 +20,7 @@
 .add-books {
   display: flex;
   gap: 2rem;
+  align-items: center;
 }
 
 .title-input {
@@ -67,4 +68,21 @@
   line-height: normal;
   letter-spacing: -0.15px;
   color: var(--very-light-pink);
+}
+
+.add-btn {
+  font-family: RobotoSlab;
+  font-size: 0.813rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: var(--white-two);
+  border: none;
+  border-radius: 3px;
+  background-color: var(--azure);
+  padding: 0.801rem 1.188rem 0.886rem 1.375rem;
+  cursor: pointer;
 }
