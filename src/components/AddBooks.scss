@@ -31,3 +31,16 @@
   border: solid 1px #e8e8e8;
   background-color: var(--white-two);
 }
+
+.title-input::placeholder {
+  width: 4.75rem;
+  height: 1.188rem;
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.15px;
+  color: var(--very-light-pink);
+}
