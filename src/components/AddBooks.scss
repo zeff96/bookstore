@@ -54,3 +54,17 @@
   border: solid 1px #e8e8e8;
   background-color: var(--white-two);
 }
+
+.author-input::placeholder {
+  width: 4.5rem;
+  height: 1.188rem;
+  margin: 0.438rem 10.438rem 0.25rem 0;
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.15px;
+  color: var(--very-light-pink);
+}
