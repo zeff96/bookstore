@@ -1,4 +1,4 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import apiSlice from './books/apiSlice/apiSlice';
 import categoryReducer from './categories/categoriesSlice';
 
