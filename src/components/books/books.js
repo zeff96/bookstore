@@ -1,23 +1,15 @@
-import React, { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
-import {
-  selectBooks,
-  selectStatus,
-  selectError,
-  getBooksAsync,
-} from '../../redux/books/bookSlice';
+import React from 'react';
+import { useGetBooksQuery } from '../../redux/books/bookSlice';
 import Book from './book';
 
 function Books() {
-  const books = useAppSelector(selectBooks);
-  const status = useAppSelector(selectStatus);
-  const error = useAppSelector(selectError);
-
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    dispatch(getBooksAsync());
-  }, [dispatch]);
+  const {
+    data: books,
+    isError,
+    isLoading,
+    isSuccess,
+    error,
+  } = useGetBooksQuery();
 
   const listBooks = books.map((book) => (
     <Book key={book.item_id} book={book} />
@@ -25,9 +17,9 @@ function Books() {
 
   return (
     <div>
-      {status === 'loading' && <h3>Loading...</h3>}
-      {error && <h3>{error.message}</h3>}
-      {books && <div>{listBooks}</div>}
+      {isLoading && <h3>Loading...</h3>}
+      {isError && <h3>{error}</h3>}
+      {isSuccess && <div>{listBooks}</div>}
     </div>
   );
 }
