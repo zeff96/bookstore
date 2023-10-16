@@ -1,15 +1,14 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import bookReducer from './books/bookSlice';
+import apiSlice from './books/apiSlice/apiSlice';
 import categoryReducer from './categories/categoriesSlice';
 
-const rootReducer = combineReducers({
-  books: bookReducer,
-  categories: categoryReducer,
+const store = configureStore({
+  reducer: {
+    categories: categoryReducer,
+    [apiSlice.reducerPath]: apiSlice.reducer,
+  },
+  middleware: (getDefaultMidleware) =>
+    getDefaultMidleware().concat(apiSlice.middleware),
 });
 
-export default function setupStore(preloadedState) {
-  return configureStore({
-    reducer: rootReducer,
-    preloadedState,
-  });
-}
+export default store;
