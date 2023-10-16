@@ -8,3 +8,5 @@ const apiSlice = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: url }),
   endpoints: () => ({}),
 });
+
+export default apiSlice;
