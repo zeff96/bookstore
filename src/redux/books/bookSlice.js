@@ -89,7 +89,15 @@ const bookSlice = apiSlice.injectEndpoints({
       }),
       invalidatesTags: [{ type: 'Books', id: 'LIST' }],
     }),
+    deleteBook: build.mutation({
+      query: (id) => ({
+        url: `/books/${id}`,
+        method: 'DELETE',
+      }),
+      invalidatesTags: (result, error, id) => [{ type: 'Books', id }],
+    }),
   }),
 });
 
-export const { useGetBooksQuery, useAddBookMutation } = bookSlice;
+export const { useGetBooksQuery, useAddBookMutation, useDeleteBookMutation } =
+  bookSlice;
