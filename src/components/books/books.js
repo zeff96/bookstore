@@ -11,8 +11,6 @@ function Books() {
     error,
   } = useGetBooksQuery();
 
-  console.log(useGetBooksQuery());
-
   const listBooks = data.map((book) => (
     <Book key={book?.item_id} book={book} />
   ));

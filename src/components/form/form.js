@@ -23,10 +23,11 @@ export default function Form() {
     if (canSave) {
       try {
         await addBook(book).unwrap();
-        setTitle('');
-        setAuthor('');
       } catch (error) {
-        console.log(error);
+        if (error?.data === 'Created') {
+          setTitle('');
+          setAuthor('');
+        }
       }
     }
   };

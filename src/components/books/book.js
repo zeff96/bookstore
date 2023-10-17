@@ -18,11 +18,7 @@ export default function Book({ book }) {
   const [deleteBook] = useDeleteBookMutation();
 
   const handleDelete = async () => {
-    try {
-      await deleteBook(book?.item_id).unwrap();
-    } catch (error) {
-      console.log(error);
-    }
+    await deleteBook(book?.item_id).unwrap();
   };
 
   return (
