@@ -64,7 +64,7 @@ import apiSlice from './apiSlice/apiSlice';
 const bookSlice = apiSlice.injectEndpoints({
   endpoints: (build) => ({
     getBooks: build.query({
-      query: '/books',
+      query: () => '/books',
       providesTags: (result) => (result
         ? [
           ...result.map(({ id }) => ({ type: 'Books', id })),

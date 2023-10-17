@@ -4,7 +4,7 @@ import Book from './book';
 
 function Books() {
   const {
-    data: books,
+    data: { books = [] } = {},
     isError,
     isLoading,
     isSuccess,
@@ -12,13 +12,13 @@ function Books() {
   } = useGetBooksQuery();
 
   const listBooks = books.map((book) => (
-    <Book key={book.item_id} book={book} />
+    <Book key={book?.item_id} book={book} />
   ));
 
   return (
     <div>
       {isLoading && <h3>Loading...</h3>}
-      {isError && <h3>{error}</h3>}
+      {isError && <h3>{error.message}</h3>}
       {isSuccess && <div>{listBooks}</div>}
     </div>
   );
