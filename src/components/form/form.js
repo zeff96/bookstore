@@ -32,31 +32,31 @@ export default function Form() {
   };
 
   return (
-    <form className='row gap-2' onSubmit={handleSubmit}>
-      <div className='col-md-5 col-lg-6'>
+    <form className="row gap-2" onSubmit={handleSubmit}>
+      <div className="col-md-5 col-lg-6">
         <input
-          type='text'
+          type="text"
           value={title}
-          placeholder='Book title'
-          className='form-control'
+          placeholder="Book title"
+          className="form-control"
           onChange={(e) => {
             setTitle(e.target.value);
           }}
         />
       </div>
-      <div className='col-md-3 col-lg-3'>
+      <div className="col-md-3 col-lg-3">
         <input
-          type='text'
+          type="text"
           value={author}
-          placeholder='Book author'
-          className='form-control'
+          placeholder="Book author"
+          className="form-control"
           onChange={(e) => {
             setAuthor(e.target.value);
           }}
         />
       </div>
-      <div className='col-md-3 col-lg-2'>
-        <button className='btn btn-primary' type='submit'>
+      <div className="col-md-3 col-lg-2">
+        <button className="btn btn-primary" type="submit">
           Add Book
         </button>
       </div>

@@ -65,13 +65,12 @@ const bookSlice = apiSlice.injectEndpoints({
   endpoints: (build) => ({
     getBooks: build.query({
       query: '/books',
-      providesTags: (result) =>
-        result
-          ? [
-              ...result.map(({ id }) => ({ type: 'Books', id })),
-              { type: 'Books', id: 'LIST' },
-            ]
-          : [{ type: 'Books', id: 'LIST' }],
+      providesTags: (result) => (result
+        ? [
+          ...result.map(({ id }) => ({ type: 'Books', id })),
+          { type: 'Books', id: 'LIST' },
+        ]
+        : [{ type: 'Books', id: 'LIST' }]),
       transformResponse: (response) => {
         const { data } = response;
         const books = Object.fromEntries(data).map((key) => ({
@@ -99,5 +98,4 @@ const bookSlice = apiSlice.injectEndpoints({
   }),
 });
 
-export const { useGetBooksQuery, useAddBookMutation, useDeleteBookMutation } =
-  bookSlice;
+export const { useGetBooksQuery, useAddBookMutation, useDeleteBookMutation } = bookSlice;
