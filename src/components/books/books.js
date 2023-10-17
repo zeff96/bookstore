@@ -4,14 +4,16 @@ import Book from './book';
 
 function Books() {
   const {
-    data: { books = [] } = {},
+    data = [],
     isError,
     isLoading,
     isSuccess,
     error,
   } = useGetBooksQuery();
 
-  const listBooks = books.map((book) => (
+  console.log(useGetBooksQuery());
+
+  const listBooks = data.map((book) => (
     <Book key={book?.item_id} book={book} />
   ));
 
