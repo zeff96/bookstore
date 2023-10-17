@@ -6,6 +6,7 @@ const url = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstor
 
 const apiSlice = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: url }),
+  tagTypes: ['Books'],
   endpoints: () => ({}),
 });
 
