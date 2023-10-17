@@ -81,7 +81,15 @@ const bookSlice = apiSlice.injectEndpoints({
         return books;
       },
     }),
+    addBook: build.mutation({
+      query: (body) => ({
+        url: '/books',
+        method: 'POST',
+        body,
+      }),
+      invalidatesTags: [{ type: 'Books', id: 'LIST' }],
+    }),
   }),
 });
 
-export const { useGetBooksQuery } = bookSlice;
+export const { useGetBooksQuery, useAddBookMutation } = bookSlice;
